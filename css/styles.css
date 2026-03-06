@@ -1195,6 +1195,7 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
 .brand-photo-section {
   background: #F2F5F9;
   padding: 80px clamp(1rem, 4vw, 2.5rem);
+  overflow-x: hidden;
 }
 
 .brand-photo-section .section-title {
@@ -1640,7 +1641,9 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   .hero-logo { width: 130px; margin-bottom: 24px; }
   .why-us-grid { grid-template-columns: 1fr; }
   .why-us-heading { font-size: 2rem; }
-  .brand-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .brand-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .brand-photo-card { padding: 20px 16px; min-height: 120px; }
+  .brand-photo-card img { max-width: 120px; max-height: 55px; }
   .brands-strip-logos { gap: 20px; }
   .strip-logo { max-height: 28px; max-width: 80px; }
 
