@@ -31,6 +31,13 @@
 
 html { scroll-behavior: smooth; }
 
+/* Eliminate 300ms tap delay and tap flash on all interactive elements */
+a, button, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--text);
