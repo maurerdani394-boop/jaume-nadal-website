@@ -173,7 +173,6 @@ ul { list-style: none; }
 
 /* Mobile menu */
 .mobile-menu {
-  display: none;
   position: fixed;
   top: var(--nav-height);
   left: 0; right: 0;
@@ -183,6 +182,11 @@ ul { list-style: none; }
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-menu { display: block; }
 }
 
 .mobile-menu.open { max-height: 500px; }
