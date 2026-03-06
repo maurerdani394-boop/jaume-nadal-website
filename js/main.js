@@ -92,7 +92,7 @@ const translations = {
     contact_intro:         'Si tiene cualquier duda o necesita más información, puede encontrarnos en:',
     contact_hours:         'Lunes a Viernes de 08:00 a 14:00',
     contact_addr_label:    'DIRECCIÓN',
-    contact_addr:          'Paseo Ramón Llull 6, 07200 Felanitx (Islas Baleares)',
+    contact_addr:          'Passeig de la República Argentina, 20, 07200 Felanitx, Illes Balears',
     contact_mobile_label:  'MÓVIL',
     contact_mobile:        '646 170 957 – 636 139 640',
     contact_email_label:   'EMAIL',
@@ -110,7 +110,7 @@ const translations = {
     // Footer
     footer_cookies: 'Política de Cookies',
     footer_privacy: 'Política de Privacidad',
-    footer_address: 'Paseo Ramón Llull 6\n07200 Felanitx (Islas Baleares)',
+    footer_address: 'Passeig de la República Argentina, 20\n07200 Felanitx, Illes Balears',
     footer_copyright: '© 2026 | Instal·lacions Jaume Nadal',
 
     // WhatsApp
@@ -246,7 +246,7 @@ const translations = {
     contact_intro:         'If you have any questions or need more information, you can find us at:',
     contact_hours:         'Monday to Friday, 08:00 to 14:00',
     contact_addr_label:    'ADDRESS',
-    contact_addr:          'Paseo Ramón Llull 6, 07200 Felanitx (Balearic Islands)',
+    contact_addr:          'Passeig de la República Argentina, 20, 07200 Felanitx, Illes Balears',
     contact_mobile_label:  'MOBILE',
     contact_mobile:        '646 170 957 – 636 139 640',
     contact_email_label:   'EMAIL',
@@ -262,7 +262,7 @@ const translations = {
 
     footer_cookies: 'Cookie Policy',
     footer_privacy: 'Privacy Policy',
-    footer_address: 'Paseo Ramón Llull 6\n07200 Felanitx (Balearic Islands)',
+    footer_address: 'Passeig de la República Argentina, 20\n07200 Felanitx, Illes Balears',
     footer_copyright: '© 2026 | Instal·lacions Jaume Nadal',
 
     whatsapp_tooltip: 'Message us on WhatsApp',
@@ -390,7 +390,7 @@ const translations = {
     contact_intro:         'Wenn Sie Fragen haben oder weitere Informationen benötigen, finden Sie uns unter:',
     contact_hours:         'Montag bis Freitag, 08:00 bis 14:00 Uhr',
     contact_addr_label:    'ADRESSE',
-    contact_addr:          'Paseo Ramón Llull 6, 07200 Felanitx (Balearen)',
+    contact_addr:          'Passeig de la República Argentina, 20, 07200 Felanitx, Illes Balears',
     contact_mobile_label:  'MOBIL',
     contact_mobile:        '646 170 957 – 636 139 640',
     contact_email_label:   'E-MAIL',
@@ -406,7 +406,7 @@ const translations = {
 
     footer_cookies: 'Cookie-Richtlinie',
     footer_privacy: 'Datenschutzerklärung',
-    footer_address: 'Paseo Ramón Llull 6\n07200 Felanitx (Balearen)',
+    footer_address: 'Passeig de la República Argentina, 20\n07200 Felanitx, Illes Balears',
     footer_copyright: '© 2026 | Instal·lacions Jaume Nadal',
 
     whatsapp_tooltip: 'Schreiben Sie uns auf WhatsApp',
