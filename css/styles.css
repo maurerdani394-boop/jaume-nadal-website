@@ -671,7 +671,8 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   border-top: 3px solid var(--steel);
   border-radius: var(--radius);
   padding: 1.75rem 1.5rem;
-  transition: all var(--transition);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
 }
 
 .service-card:hover {
@@ -1200,7 +1201,8 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   justify-content: center;
   gap: 12px;
   box-shadow: 0 2px 8px rgba(30,74,140,0.05);
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.4s ease;
+  will-change: transform;
   opacity: 0;
   transform: translateY(20px);
 }
