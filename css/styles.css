@@ -665,6 +665,11 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   margin-top: 2rem;
 }
 
+@keyframes serviceCardIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .service-card {
   background: var(--white);
   border: 1px solid #E4ECF4;
@@ -673,7 +678,18 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   padding: 1.75rem 1.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   will-change: transform;
+  animation: serviceCardIn 0.5s ease forwards;
+  animation-play-state: paused;
+  opacity: 0;
 }
+
+.services-preview.visible .service-card { animation-play-state: running; }
+.services-preview.visible .service-card:nth-child(1) { animation-delay: 0.05s; }
+.services-preview.visible .service-card:nth-child(2) { animation-delay: 0.10s; }
+.services-preview.visible .service-card:nth-child(3) { animation-delay: 0.15s; }
+.services-preview.visible .service-card:nth-child(4) { animation-delay: 0.20s; }
+.services-preview.visible .service-card:nth-child(5) { animation-delay: 0.25s; }
+.services-preview.visible .service-card:nth-child(6) { animation-delay: 0.30s; }
 
 .service-card:hover {
   border-top-color: var(--navy);
@@ -1189,6 +1205,11 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   margin-top: 2.5rem;
 }
 
+@keyframes brandFadeIn {
+  from { opacity: 0; transform: translateY(16px) translateZ(0); }
+  to   { opacity: 1; transform: translateY(0)    translateZ(0); }
+}
+
 .brand-photo-card {
   background: var(--white);
   border: 1px solid #E8ECF2;
@@ -1201,19 +1222,38 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   justify-content: center;
   gap: 12px;
   box-shadow: 0 2px 8px rgba(30,74,140,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.4s ease;
-  will-change: transform;
-  opacity: 0;
-  transform: translateY(20px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  animation: brandFadeIn 0.35s ease both;
 }
 
-.brand-photo-card.card-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* nth-child stagger — 21 cards × 0.04s */
+.brand-photo-card:nth-child(1)  { animation-delay: 0.04s; }
+.brand-photo-card:nth-child(2)  { animation-delay: 0.08s; }
+.brand-photo-card:nth-child(3)  { animation-delay: 0.12s; }
+.brand-photo-card:nth-child(4)  { animation-delay: 0.16s; }
+.brand-photo-card:nth-child(5)  { animation-delay: 0.20s; }
+.brand-photo-card:nth-child(6)  { animation-delay: 0.24s; }
+.brand-photo-card:nth-child(7)  { animation-delay: 0.28s; }
+.brand-photo-card:nth-child(8)  { animation-delay: 0.32s; }
+.brand-photo-card:nth-child(9)  { animation-delay: 0.36s; }
+.brand-photo-card:nth-child(10) { animation-delay: 0.40s; }
+.brand-photo-card:nth-child(11) { animation-delay: 0.44s; }
+.brand-photo-card:nth-child(12) { animation-delay: 0.48s; }
+.brand-photo-card:nth-child(13) { animation-delay: 0.52s; }
+.brand-photo-card:nth-child(14) { animation-delay: 0.56s; }
+.brand-photo-card:nth-child(15) { animation-delay: 0.60s; }
+.brand-photo-card:nth-child(16) { animation-delay: 0.64s; }
+.brand-photo-card:nth-child(17) { animation-delay: 0.68s; }
+.brand-photo-card:nth-child(18) { animation-delay: 0.72s; }
+.brand-photo-card:nth-child(19) { animation-delay: 0.76s; }
+.brand-photo-card:nth-child(20) { animation-delay: 0.80s; }
+.brand-photo-card:nth-child(21) { animation-delay: 0.84s; }
 
 .brand-photo-card:hover {
-  transform: translateY(-5px);
+  transition-delay: 0s;
+  transform: translateY(-5px) translateZ(0);
   box-shadow: 0 12px 28px rgba(30,74,140,0.12);
   border-color: var(--steel);
 }
@@ -1224,6 +1264,9 @@ section { padding: 5rem clamp(1rem, 4vw, 2.5rem); }
   width: auto;
   height: auto;
   object-fit: contain;
+  will-change: filter;
+  transform: translateZ(0);
+  transition: filter 0.2s ease;
 }
 
 .brand-card-label {

@@ -581,12 +581,7 @@ function initLangButtons() {
    ============================================================ */
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.animate-on-scroll');
-  if (!elements.length) return;
 
-  // Stagger service cards
-  document.querySelectorAll('.services-grid .service-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.08}s`;
-  });
   document.querySelectorAll('.testimonials-grid .testimonial-card').forEach((card, i) => {
     card.style.transitionDelay = `${i * 0.1}s`;
   });
@@ -604,6 +599,20 @@ function initScrollAnimations() {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   elements.forEach(el => observer.observe(el));
+
+  // Services preview — observe section, run card animations via CSS play-state
+  const servicesPreview = document.querySelector('.services-preview');
+  if (servicesPreview) {
+    const svObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          svObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    svObs.observe(servicesPreview);
+  }
 }
 
 /* ============================================================

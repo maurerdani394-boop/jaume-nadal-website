@@ -163,23 +163,5 @@
   </a>
 
   <script src="js/main.js"></script>
-  <script>
-    (function () {
-      var cards = document.querySelectorAll('.brand-photo-card');
-      if (!cards.length) return;
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            obs.unobserve(entry.target);
-            entry.target.classList.add('card-visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      cards.forEach(function (card, i) {
-        card.style.transitionDelay = (i * 0.05) + 's';
-        obs.observe(card);
-      });
-    })();
-  </script>
 </body>
 </html>
