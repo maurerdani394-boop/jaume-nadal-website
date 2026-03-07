@@ -78,7 +78,7 @@
     <canvas class="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <img class="hero-logo" src="images/logo-removebg-preview.png" alt="" aria-hidden="true">
-      <h1>INSTAL·LACIONS<br>JAUME NADAL</h1>
+      <h1><span class="hero-line-1">INSTAL·LACIONS</span><span class="hero-line-2">JAUME NADAL</span></h1>
       <p class="hero-sub" data-i18n="hero_sub">Especialistas en fontanería, calefacción y aire acondicionado en Mallorca</p>
       <div class="hero-ctas">
         <a href="servicios.html" class="btn btn-outline" data-i18n="nav_services">Servicios</a>
@@ -94,14 +94,14 @@
   <!-- ======================================================
        ABOUT
        ====================================================== -->
-  <section class="about animate-on-scroll">
+  <section class="about">
     <div class="section-inner">
       <div class="about-grid">
-        <div class="about-left">
+        <div class="about-left" data-reveal="left">
           <p class="section-label">Jaume Nadal Pedregosa</p>
           <h2 class="section-title" data-i18n="about_heading">Desde 2005 trabajando para usted</h2>
           <div class="section-divider"></div>
-          <div class="stats-row">
+          <div class="stats-row" data-reveal="up" style="--delay:0.15s">
             <div class="stat-box">
               <div class="stat-number" data-i18n="about_stat1_num">Desde<br>2005</div>
               <div class="stat-label" data-i18n="about_stat1_label">Más de 20 años de experiencia</div>
@@ -116,7 +116,7 @@
             </div>
           </div>
         </div>
-        <div class="about-right">
+        <div class="about-right" data-reveal="right">
           <p class="about-body" data-i18n="about_body">En Jaume Nadal Pedregosa nos hemos preocupado por satisfacer las necesidades de nuestros clientes más exigentes ofreciendo siempre un trato serio y profesional junto con unos productos de alta calidad. Somos especialistas en fontanería, calefacción y aire acondicionado, piscinas, grupos de presión y pozos, energía solar e instalaciones eléctricas. Si tiene alguna necesidad o proyecto, contáctenos sin compromiso.</p>
           <a href="contacto.html" class="btn btn-primary" data-i18n="about_cta">Solicitar presupuesto</a>
         </div>
@@ -170,37 +170,37 @@
        ====================================================== -->
   <section class="services-preview">
     <div class="section-inner">
-      <p class="section-label" data-i18n="services_label">Lo que hacemos</p>
-      <h2 class="section-title" data-i18n="services_title">Nuestros Servicios</h2>
-      <div class="section-divider"></div>
+      <p class="section-label" data-reveal="up" data-i18n="services_label">Lo que hacemos</p>
+      <h2 class="section-title" data-reveal="up" style="--delay:0.1s" data-i18n="services_title">Nuestros Servicios</h2>
+      <div class="section-divider" data-reveal="fade" style="--delay:0.2s"></div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card" style="--i:0">
           <div class="service-card-icon">🔧</div>
           <h3 data-i18n="s01_name">FONTANERÍA</h3>
           <p data-i18n="s01_desc">Instalación de tuberías, cuartos de baño, porcelana y grifería.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" style="--i:1">
           <div class="service-card-icon">❄️</div>
           <h3 data-i18n="s05_name">AIRE ACONDICIONADO</h3>
           <p data-i18n="s05_desc">Instalaciones y mantenimientos de aire acondicionado para el verano.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" style="--i:2">
           <div class="service-card-icon">🔥</div>
           <h3 data-i18n="s03_name">CALEFACCIÓN Y RADIADORES</h3>
           <p data-i18n="s03_desc">Instalación y mantenimiento de sistemas calefactables y calderas.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" style="--i:3">
           <div class="service-card-icon">☀️</div>
           <h3 data-i18n="s07_name">ENERGÍA SOLAR</h3>
           <p data-i18n="s07_desc">Paneles solares térmicos para agua caliente sanitaria y calefacción.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" style="--i:4">
           <div class="service-card-icon">🏊</div>
           <h3 data-i18n="s08_name">PISCINAS</h3>
           <p data-i18n="s08_desc">Sistemas de depuración, bombas de calor y tratamiento del agua.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" style="--i:5">
           <div class="service-card-icon">⚡</div>
           <h3 data-i18n="s10_name">INSTALACIONES ELÉCTRICAS</h3>
           <p data-i18n="s10_desc">Cuadros eléctricos, líneas de suministro y puntos de recarga EV.</p>
@@ -219,14 +219,14 @@
   <!-- ======================================================
        TESTIMONIALS
        ====================================================== -->
-  <section class="testimonials animate-on-scroll">
+  <section class="testimonials">
     <div class="section-inner">
-      <p class="section-label" data-i18n="testimonials_label">Opiniones</p>
-      <h2 class="section-title" data-i18n="testimonials_title">Lo que dicen nuestros clientes</h2>
-      <p class="testimonials-sub" data-i18n="testimonials_sub">Más de 20 años de confianza en Felanitx y toda Mallorca</p>
+      <p class="section-label" data-reveal="up" data-i18n="testimonials_label">Opiniones</p>
+      <h2 class="section-title" data-reveal="up" style="--delay:0.1s" data-i18n="testimonials_title">Lo que dicen nuestros clientes</h2>
+      <p class="testimonials-sub" data-reveal="fade" style="--delay:0.2s" data-i18n="testimonials_sub">Más de 20 años de confianza en Felanitx y toda Mallorca</p>
 
       <div class="testimonials-grid">
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-reveal="up" style="--delay:0s">
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p class="testimonial-text">"Muy profesionales y puntuales. Nos instalaron el aire acondicionado en casa y quedamos muy satisfechos con el trabajo y el precio. Sin duda los recomendamos."</p>
           <div class="testimonial-footer">
@@ -234,7 +234,7 @@
             <span class="google-badge">Google Review</span>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-reveal="up" style="--delay:0.1s">
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p class="testimonial-text">"Llevamos años trabajando con Jaume Nadal para el mantenimiento de la caldera y siempre responden rápido y con seriedad. Un servicio de confianza."</p>
           <div class="testimonial-footer">
@@ -242,7 +242,7 @@
             <span class="google-badge">Google Review</span>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-reveal="up" style="--delay:0.2s">
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p class="testimonial-text">"Tuvimos una avería de fontanería un viernes por la tarde y vinieron enseguida. Trabajo limpio, bien hecho y precio justo. 100% recomendable."</p>
           <div class="testimonial-footer">
@@ -250,7 +250,7 @@
             <span class="google-badge">Google Review</span>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-reveal="up" style="--delay:0.3s">
           <div class="stars">⭐⭐⭐⭐⭐</div>
           <p class="testimonial-text">"Instalaron el suelo radiante en nuestra reforma y el resultado es excelente. Muy profesionales en todo momento, desde el presupuesto hasta el acabado final."</p>
           <div class="testimonial-footer">
@@ -272,7 +272,7 @@
   <!-- ======================================================
        BRANDS STRIP
        ====================================================== -->
-  <section class="brands-strip animate-on-scroll">
+  <section class="brands-strip" data-reveal="up">
     <div class="section-inner" style="text-align:center;">
       <h2 class="section-title" data-i18n="brands_strip_title">Trabajamos con las mejores marcas</h2>
       <div class="brands-strip-logos">
@@ -290,7 +290,7 @@
   <!-- ======================================================
        FAQ
        ====================================================== -->
-  <section class="faq-section animate-on-scroll">
+  <section class="faq-section" data-reveal="up">
     <div class="faq-inner">
       <p class="faq-label" data-i18n="faq_label">FAQ</p>
       <h2 class="faq-heading" data-i18n="faq_heading">Preguntas frecuentes</h2>
@@ -368,7 +368,7 @@
   <!-- ======================================================
        CTA BANNER
        ====================================================== -->
-  <section class="cta-banner animate-on-scroll">
+  <section class="cta-banner" data-reveal="fade">
     <div class="section-inner" style="text-align:center;">
       <h2 class="section-title" data-i18n="cta_heading">¿Tiene un proyecto? Contáctenos sin compromiso</h2>
       <a href="contacto.html" class="btn btn-white-orange" style="margin-top:1.5rem;" data-i18n="cta_btn">Solicitar presupuesto</a>
@@ -378,7 +378,7 @@
   <!-- ======================================================
        FOOTER
        ====================================================== -->
-  <footer class="footer">
+  <footer class="footer" data-reveal="up">
     <div class="footer-inner">
       <div class="footer-logo">
         <a href="index.html" aria-label="Inicio">
@@ -418,6 +418,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
+    <span class="wa-tooltip" aria-hidden="true">Escríbenos por WhatsApp</span>
   </a>
 
   <script src="js/main.js"></script>
@@ -465,13 +466,14 @@
     })();
   </script>
   <script>
-    /* Hero canvas — animated diagonal lines */
+    /* Hero canvas — parallel diagonal lines moving left→right */
     (function () {
       var canvas = document.querySelector('.hero-canvas');
       if (!canvas) return;
       var ctx = canvas.getContext('2d');
-      var w, h, tick = 0;
-      var SPACING = 130, SPEED = 0.35;
+      var w, h, offset = 0;
+      var SPACING = 120;
+      var SPEED = 0.3;
 
       function resize() {
         w = canvas.width  = canvas.offsetWidth;
@@ -480,23 +482,21 @@
 
       function draw() {
         ctx.clearRect(0, 0, w, h);
-        ctx.strokeStyle = 'rgba(139,174,212,0.12)';
         ctx.lineWidth = 1;
-        var diag = w + h;
-        var count = Math.ceil(diag / SPACING) + 2;
-        for (var i = 0; i < count; i++) {
-          var phase = ((tick * SPEED + i * SPACING) % diag);
+        ctx.strokeStyle = 'rgba(139,174,212,0.10)';
+        var o = offset % SPACING;
+        for (var x = o - h; x < w + SPACING; x += SPACING) {
           ctx.beginPath();
-          ctx.moveTo(phase - h, 0);
-          ctx.lineTo(phase, h);
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x + h, h);
           ctx.stroke();
         }
-        tick++;
+        offset += SPEED;
         requestAnimationFrame(draw);
       }
 
       resize();
-      window.addEventListener('resize', resize);
+      window.addEventListener('resize', resize, { passive: true });
       draw();
 
       /* Scroll indicator fade-out */

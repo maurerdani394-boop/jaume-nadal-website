@@ -510,10 +510,12 @@ function applyLanguage(lang) {
   const titleKey = pageTitleKeys[page] || 'title_home';
   document.title = translations[lang][titleKey] || document.title;
 
-  // Update WhatsApp tooltip
+  // Update WhatsApp tooltip (data-tooltip attr + span)
   const waBtn = document.querySelector('.whatsapp-btn');
   if (waBtn && translations[lang].whatsapp_tooltip) {
     waBtn.setAttribute('data-tooltip', translations[lang].whatsapp_tooltip);
+    const waTooltip = waBtn.querySelector('.wa-tooltip');
+    if (waTooltip) waTooltip.textContent = translations[lang].whatsapp_tooltip;
   }
 
   // Highlight active lang button
@@ -535,11 +537,13 @@ function initLanguage() {
 }
 
 /* ============================================================
-   NAVBAR SCROLL SHADOW
+   NAVBAR — Transparent → frosted on scroll
    ============================================================ */
 function initNavbarScroll() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
+  // Set initial state
+  navbar.classList.toggle('scrolled', window.scrollY > 80);
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 80);
   }, { passive: true });
@@ -577,18 +581,11 @@ function initLangButtons() {
 }
 
 /* ============================================================
-   INTERSECTION OBSERVER — fade in on scroll
+   INTERSECTION OBSERVER — animate-on-scroll + data-reveal
    ============================================================ */
 function initScrollAnimations() {
+  // Legacy animate-on-scroll
   const elements = document.querySelectorAll('.animate-on-scroll');
-
-  document.querySelectorAll('.testimonials-grid .testimonial-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.1}s`;
-  });
-  document.querySelectorAll('.brands-grid-cards .brand-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.06}s`;
-  });
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -597,10 +594,9 @@ function initScrollAnimations() {
       }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
   elements.forEach(el => observer.observe(el));
 
-  // Services preview — observe section, run card animations via CSS play-state
+  // Services preview card play-state
   const servicesPreview = document.querySelector('.services-preview');
   if (servicesPreview) {
     const svObs = new IntersectionObserver((entries) => {
@@ -616,12 +612,84 @@ function initScrollAnimations() {
 }
 
 /* ============================================================
-   WHATSAPP FLOATING BUTTON — delayed appearance
+   DATA-REVEAL — polished section reveal system
+   ============================================================ */
+function initRevealAnimations() {
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (!revealEls.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => obs.observe(el));
+}
+
+/* ============================================================
+   TESTIMONIAL STARS — pop-in one by one on viewport entry
+   ============================================================ */
+function initStarAnimations() {
+  const cards = document.querySelectorAll('.testimonial-card');
+  if (!cards.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const starsEl = entry.target.querySelector('.stars');
+        if (starsEl && !starsEl.dataset.animated) {
+          starsEl.dataset.animated = '1';
+          const count = (starsEl.textContent.match(/⭐/g) || []).length;
+          starsEl.textContent = '';
+          for (let i = 0; i < count; i++) {
+            const s = document.createElement('span');
+            s.className = 'star-item';
+            s.textContent = '⭐';
+            s.style.animationDelay = `${i * 0.1}s`;
+            starsEl.appendChild(s);
+          }
+        }
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  cards.forEach(card => obs.observe(card));
+}
+
+/* ============================================================
+   HERO PARALLAX — content moves at 0.3x scroll speed
+   ============================================================ */
+function initHeroParallax() {
+  const heroInner = document.querySelector('.hero-inner');
+  const hero = document.querySelector('.hero');
+  if (!heroInner || !hero) return;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (scrollY < hero.offsetHeight) {
+          heroInner.style.transform = `translateY(${scrollY * 0.3}px)`;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON — spring entrance + sonar ripple
    ============================================================ */
 function initWhatsApp() {
   const btn = document.querySelector('.whatsapp-btn');
   if (!btn) return;
-  setTimeout(() => btn.classList.add('visible'), 1500);
+  setTimeout(() => {
+    btn.classList.add('visible');
+    // After spring animation completes, enable sonar ripple rings
+    setTimeout(() => btn.classList.add('wa-ready'), 520);
+  }, 1500);
 }
 
 /* ============================================================
@@ -633,5 +701,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   initLangButtons();
   initScrollAnimations();
+  initRevealAnimations();
+  initStarAnimations();
+  initHeroParallax();
   initWhatsApp();
 });
